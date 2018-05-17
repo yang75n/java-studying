@@ -26,15 +26,16 @@ public class LogHandler implements InvocationHandler {
 	// 关联的这个实现类的方法被调用时将被执行
 	/* InvocationHandler接口的方法，proxy表示代理，method表示原对象被调用的方法，args表示方法的参数 */
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		System.out.println("start-->>");
+		System.out.println("call invoke-->>");
 		for (int i = 0; i < args.length; i++) {
-			System.out.println(args[i]);
+			System.out.println("args " + i + " =" + args[i]);
 		}
 		Object ret = null;
 		try {
 			/* 原对象方法调用前处理日志信息 */
 			System.out.println("satrt-->>");
-
+			System.out.println("targetObject=" + targetObject);
+			//System.out.println("proxy=" + proxy);
 			// 调用目标方法
 			ret = method.invoke(targetObject, args);
 			/* 原对象方法调用后处理日志信息 */
