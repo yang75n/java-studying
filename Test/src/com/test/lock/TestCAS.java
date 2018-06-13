@@ -4,8 +4,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestCAS {
 
-	volatile static int count = 0;// 需要加同步才能保证
-	static AtomicInteger atomicInteger = new AtomicInteger(0);// 底层通过CAS方式保证加了锁
+	public volatile static int count = 0;// 需要加同步才能保证
+	public static AtomicInteger atomicInteger = new AtomicInteger(0);// 底层通过CAS方式保证加了锁
 
 	public static void main(String[] args) {
 		for (int i = 0; i < 10; i++) {
@@ -17,9 +17,9 @@ public class TestCAS {
 						e.printStackTrace();
 					}
 					for (int j = 0; j < 100; j++) {
-						// synchronized (TestCAS.class) {// 一定要保证同一把锁
-						// count++;
-						// }
+						synchronized (TestCAS.class) {// 一定要保证同一把锁
+							count++;
+						}
 						atomicInteger.incrementAndGet();
 					}
 				}
