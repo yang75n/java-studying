@@ -33,7 +33,9 @@ class NioServer {
 		// 使用轮询访问selector
 		while (true) {
 			// 当有注册的事件到达时，方法返回，否则阻塞。
-			selector.select();
+            System.out.println("start to select");
+            selector.select();
+            System.out.println("selected  over");
 
 			// 获取selector中的迭代器，选中项为注册的事件
 			Iterator<SelectionKey> ite = selector.selectedKeys().iterator();
@@ -64,10 +66,10 @@ class NioServer {
 					String message = new String(data);
 
 					System.out.println("receive message from client, size:" + buffer.position() + " msg: " + message);
-					// ByteBuffer outbuffer =
-					// ByteBuffer.wrap(("server.".concat(msg)).getBytes());
-					// channel.write(outbuffer);
-				}
+//                    ByteBuffer outbuffer =
+//                            ByteBuffer.wrap(("server.".concat(message)).getBytes());
+//                    channel.write(outbuffer);
+                }
 			}
 		}
 	}

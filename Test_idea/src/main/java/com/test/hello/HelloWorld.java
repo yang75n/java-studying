@@ -16,7 +16,8 @@ public class HelloWorld {
         System.out.println(int.class);
         System.out.println(Integer.TYPE);
 
-
+        float f = 3.4f;
+        double d = 3.4;
 
 
     }

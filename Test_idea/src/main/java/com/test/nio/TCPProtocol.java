@@ -8,7 +8,7 @@ public interface TCPProtocol {
 	 * 接收一个SocketChannel的处理
 	 * 
 	 * @param key
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	void handleAccept(SelectionKey key) throws IOException;
 
@@ -16,7 +16,7 @@ public interface TCPProtocol {
 	 * 从一个SocketChannel读取信息的处理
 	 * 
 	 * @param key
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	void handleRead(SelectionKey key) throws IOException;
 
@@ -24,7 +24,7 @@ public interface TCPProtocol {
 	 * 向一个SocketChannel写入信息的处理
 	 * 
 	 * @param key
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	void handleWrite(SelectionKey key) throws IOException;
 }
