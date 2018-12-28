@@ -8,17 +8,5 @@ public class HelloWorld {
         System.out.println("Hello,Test;Hello,idea;Hello,Maven");
         System.out.println(ClassLoader.getSystemClassLoader().toString());
         HelloWorld helloWorld = new HelloWorld();
-
-
-        System.out.println( helloWorld.getClass()==HelloWorld.class);
-        System.out.println( helloWorld.getClass());
-        System.out.println( HelloWorld.class.toString());
-        System.out.println(int.class);
-        System.out.println(Integer.TYPE);
-
-        float f = 3.4f;
-        double d = 3.4;
-
-
     }
 }
