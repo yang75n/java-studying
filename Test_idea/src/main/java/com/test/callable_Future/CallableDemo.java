@@ -14,7 +14,6 @@ public class CallableDemo {
                 sum += i;
             }
 
-
             return sum;
         }
     }

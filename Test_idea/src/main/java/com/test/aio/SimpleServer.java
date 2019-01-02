@@ -34,10 +34,8 @@ public class SimpleServer {
         try {
             ch.read(byteBuffer).get();
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (ExecutionException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         byteBuffer.flip();
@@ -49,14 +47,12 @@ public class SimpleServer {
         try {
             SimpleServer server = new SimpleServer(7788);
         } catch (IOException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
 
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

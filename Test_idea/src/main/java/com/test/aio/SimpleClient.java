@@ -9,35 +9,32 @@ import java.util.concurrent.Future;
 
 public class SimpleClient {
 
-	private AsynchronousSocketChannel client;
+    private AsynchronousSocketChannel client;
 
-	public SimpleClient(String host, int port) throws IOException, InterruptedException, ExecutionException {
-		this.client = AsynchronousSocketChannel.open();
-		Future<?> future = client.connect(new InetSocketAddress(host, port));
-		future.get();
-	}
+    public SimpleClient(String host, int port) throws IOException, InterruptedException, ExecutionException {
+        this.client = AsynchronousSocketChannel.open();
+        Future<?> future = client.connect(new InetSocketAddress(host, port));
+        future.get();
+    }
 
-	public void write(byte b) {
-		ByteBuffer byteBuffer = ByteBuffer.allocate(32);
-		byteBuffer.put(b);
-		byteBuffer.flip();
-		client.write(byteBuffer);
-	}
+    public void write(byte b) {
+        ByteBuffer byteBuffer = ByteBuffer.allocate(32);
+        byteBuffer.put(b);
+        byteBuffer.flip();
+        client.write(byteBuffer);
+    }
 
-	public static void main(String[] args) {
-		SimpleClient client;
-		try {
-			client = new SimpleClient("localhost", 7788);
-			client.write((byte) 11);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+    public static void main(String[] args) {
+        SimpleClient client;
+        try {
+            client = new SimpleClient("localhost", 7788);
+            client.write((byte) 11);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
 }

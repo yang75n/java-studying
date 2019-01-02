@@ -8,5 +8,6 @@ public class HelloWorld {
         System.out.println("Hello,Test;Hello,idea;Hello,Maven");
         System.out.println(ClassLoader.getSystemClassLoader().toString());
         HelloWorld helloWorld = new HelloWorld();
+
     }
 }

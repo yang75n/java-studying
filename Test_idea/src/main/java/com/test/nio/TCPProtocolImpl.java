@@ -10,58 +10,58 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TCPProtocolImpl implements TCPProtocol {
-	private int bufferSize;
+    private int bufferSize;
 
-	public TCPProtocolImpl(int bufferSize) {
-		this.bufferSize = bufferSize;
-	}
-	
-	/**
-	 * 将可连接 调整为 可读取
-	 */
-	public void handleAccept(SelectionKey key) throws IOException {
-		SocketChannel clientChannel = ((ServerSocketChannel) key.channel()).accept();
-		clientChannel.configureBlocking(false);
-		clientChannel.register(key.selector(), SelectionKey.OP_READ, ByteBuffer.allocate(bufferSize));
-	}
+    public TCPProtocolImpl(int bufferSize) {
+        this.bufferSize = bufferSize;
+    }
 
-	public void handleRead(SelectionKey key) throws IOException {
-		// 获得与客户端通信的信道
-		SocketChannel clientChannel = (SocketChannel) key.channel();
+    /**
+     * 将可连接 调整为 可读取
+     */
+    public void handleAccept(SelectionKey key) throws IOException {
+        SocketChannel clientChannel = ((ServerSocketChannel) key.channel()).accept();
+        clientChannel.configureBlocking(false);
+        clientChannel.register(key.selector(), SelectionKey.OP_READ, ByteBuffer.allocate(bufferSize));
+    }
 
-		// 得到并清空缓冲区
-		ByteBuffer buffer = (ByteBuffer) key.attachment();
-		buffer.clear();
+    public void handleRead(SelectionKey key) throws IOException {
+        // 获得与客户端通信的信道
+        SocketChannel clientChannel = (SocketChannel) key.channel();
 
-		// 读取信息获得读取的字节数
-		long bytesRead = clientChannel.read(buffer);
+        // 得到并清空缓冲区
+        ByteBuffer buffer = (ByteBuffer) key.attachment();
+        buffer.clear();
 
-		if (bytesRead == -1) {
-			// 没有读取到内容的情况
-			clientChannel.close();
-		} else {
-			// 将缓冲区准备为数据传出状态
-			buffer.flip();
+        // 读取信息获得读取的字节数
+        long bytesRead = clientChannel.read(buffer);
 
-			// 将字节转化为为UTF-16的字符串
-			String receivedString = Charset.forName("UTF-16").newDecoder().decode(buffer).toString();
+        if (bytesRead == -1) {
+            // 没有读取到内容的情况
+            clientChannel.close();
+        } else {
+            // 将缓冲区准备为数据传出状态
+            buffer.flip();
 
-			// 控制台打印出来
-			System.out.println("接收到来自" + clientChannel.socket().getRemoteSocketAddress() + "的信息:" + receivedString);
+            // 将字节转化为为UTF-16的字符串
+            String receivedString = Charset.forName("UTF-16").newDecoder().decode(buffer).toString();
 
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
-			String f = format.format(new Date());
-			// 准备发送的文本
-			String sendString = "你好,客户端. @" + f + "，已经收到你的信息:" + receivedString;
-			buffer = ByteBuffer.wrap(sendString.getBytes("UTF-16"));
-			clientChannel.write(buffer);
+            // 控制台打印出来
+            System.out.println("接收到来自" + clientChannel.socket().getRemoteSocketAddress() + "的信息:" + receivedString);
 
-			// 设置为下一次读取或是写入做准备
-			key.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
-		}
-	}
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
+            String f = format.format(new Date());
+            // 准备发送的文本
+            String sendString = "你好,客户端. @" + f + "，已经收到你的信息:" + receivedString;
+            buffer = ByteBuffer.wrap(sendString.getBytes("UTF-16"));
+            clientChannel.write(buffer);
 
-	public void handleWrite(SelectionKey key) throws IOException {
-		// do nothing
-	}
+            // 设置为下一次读取或是写入做准备
+            key.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+        }
+    }
+
+    public void handleWrite(SelectionKey key) throws IOException {
+        // do nothing
+    }
 }
