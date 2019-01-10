@@ -29,7 +29,6 @@ public class TestClosure {
             return null;
         }
 
-
     }
 
     @Test

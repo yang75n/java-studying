@@ -1,4 +1,4 @@
-package com.test.DirectByteBuffer;
+package com.test.directByteBuffer;
 
 import sun.nio.ch.DirectBuffer;
 
