@@ -2,6 +2,7 @@ package com.test.classLoader;
 
 public class Book {
 
+
     public static void main(String[] args) {
         staticFunction();
     }
