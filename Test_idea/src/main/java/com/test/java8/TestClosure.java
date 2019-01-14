@@ -21,6 +21,11 @@ public class TestClosure {
         };
     }
 
+    public static Supplier<Integer> testClosure3() {
+        int i = 1;
+        return () -> i;
+    }
+
     @FunctionalInterface
     public interface Supplier<T> {
         T get();
@@ -36,5 +41,7 @@ public class TestClosure {
         System.out.println("start");
         System.out.println(testClosure().get());
         System.out.println(testClosure2().get());
+        System.out.println(testClosure3().get());
+
     }
 }

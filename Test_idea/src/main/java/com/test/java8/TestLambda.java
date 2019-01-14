@@ -10,7 +10,6 @@ public class TestLambda {
 	}
 }
 
-@FunctionalInterface
 interface MyIntegerCalculator {
 
 	public Integer calcIt(Integer s1);

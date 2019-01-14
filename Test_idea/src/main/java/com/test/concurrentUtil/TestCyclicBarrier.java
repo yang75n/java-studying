@@ -8,12 +8,9 @@ public class TestCyclicBarrier {
 
     public static void main(String[] args) {
         int n = 4;
-        CyclicBarrier barrier = new CyclicBarrier(n, new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("当前线程" + Thread.currentThread().getName());
-            }
-        });
+        CyclicBarrier barrier = new CyclicBarrier(n, () ->
+                System.out.println("当前线程" + Thread.currentThread().getName())
+        );
         for (int i = 0; i < n; i++) {
             new Writer(barrier).start();
         }

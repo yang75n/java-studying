@@ -15,8 +15,8 @@ public class HelloWorld {
         System.out.println(ClassLoader.getSystemClassLoader().toString());
         HelloWorld helloWorld = new HelloWorld();
         String s = "fsdfsd";
-        Integer one = 100;
-        Integer two = 100;
+        Integer one = 128;//100
+        Integer two = 128;//100
         System.out.println(one == two);
 //
         Integer total = 0;
@@ -41,16 +41,22 @@ public class HelloWorld {
         System.out.println("剩余" + b1.subtract(b2).floatValue());
 //
 
-        System.out.println("hash="+s.hashCode());
+        System.out.println("hash=" + s.hashCode());
         List<String> list = new ArrayList<String>();
         list.add("sdfsdf");
         List list1 = list;
-        System.out.println(list +" ,"+list.hashCode());
-        list.set(0,"wowoo");
-        System.out.println(list +" ,"+list.hashCode());
-        System.out.println(list1 +" ,"+list1.hashCode());
+        System.out.println(list + " ," + list.hashCode());
+        list.set(0, "wowoo");
+        System.out.println(list + " ," + list.hashCode());
+        System.out.println(list1 + " ," + list1.hashCode());
 
-        System.out.println(list==list1);
+        System.out.println(list == list1);
+
+
+        String s1 = "sdf";
+        String s2 = s1;
+        System.out.println(s1 + " " + s2);
+
     }
 
     private static int iii() {
