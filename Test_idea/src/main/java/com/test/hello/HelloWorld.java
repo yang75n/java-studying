@@ -15,8 +15,8 @@ public class HelloWorld {
         System.out.println(ClassLoader.getSystemClassLoader().toString());
         HelloWorld helloWorld = new HelloWorld();
         String s = "fsdfsd";
-        Integer one = 128;//100
-        Integer two = 128;//100
+        Integer one = 10;//100
+        Integer two = 10;//100
         System.out.println(one == two);
 //
         Integer total = 0;
