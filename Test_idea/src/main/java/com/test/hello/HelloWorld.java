@@ -61,10 +61,15 @@ public class HelloWorld {
 
     private static int iii() {
         System.out.println("wwwwwwwwwwww");
+
         return 3;
     }
 
 
+    /**
+     *
+     * @param total
+     */
     private static void paramCheck(Integer total) {
         if (total < 1) {
             total += 1;
