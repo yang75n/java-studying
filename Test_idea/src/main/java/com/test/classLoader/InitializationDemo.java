@@ -25,7 +25,7 @@ class Father extends Grandpa {
 
 
     //注意有final和没有final的区别
-    public static int factor = 25;
+    protected static int factor = 25;
 
     //主意有final和没有final的区别
     public static final String name = "字符串常量爸爸";
