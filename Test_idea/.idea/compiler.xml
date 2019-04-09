@@ -25,7 +25,9 @@
         <module name="Test_idea" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="Test_idea" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 

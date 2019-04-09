@@ -8,6 +8,7 @@ import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
 
 class NioServer {
 	// 通道管理器
@@ -33,7 +34,7 @@ class NioServer {
 		// 使用轮询访问selector
 		while (true) {
 			// 当有注册的事件到达时，方法返回，否则阻塞。
-            System.out.println("start to select");
+            System.out.println("start to select  =========:"+Thread.currentThread().getName());
             selector.select();
             System.out.println("selected  over");
 
@@ -51,11 +52,12 @@ class NioServer {
 					SocketChannel channel = server.accept();
 					channel.configureBlocking(false);
 					// 向客户端发消息
-					channel.write(ByteBuffer.wrap(new String("send message to client").getBytes()));
+                    System.out.println("收到一个客户端连接 发数据给客户端 ==============:"+Thread.currentThread().getName());
+                    channel.write(ByteBuffer.wrap(new String("send message to client").getBytes()));
 					// 在与客户端连接成功后，为客户端通道注册SelectionKey.OP_READ事件。
 					channel.register(selector, SelectionKey.OP_READ);
 
-					System.out.println("客户端请求连接事件");
+					System.out.println("客户端请求连接事件   ================:"+Thread.currentThread().getName());
 				} else if (key.isReadable()) {// 有可读数据事件
 					// 获取客户端传输数据可读取消息通道。
 					SocketChannel channel = (SocketChannel) key.channel();
@@ -65,10 +67,16 @@ class NioServer {
 					byte[] data = buffer.array();
 					String message = new String(data);
 
-					System.out.println("receive message from client, size:" + buffer.position() + " msg: " + message);
+					System.out.println("receive message from client, size:" + buffer.position() + " msg: " + message   + "==========Thread :"+Thread.currentThread().getName());
 //                    ByteBuffer outbuffer =
 //                            ByteBuffer.wrap(("server.".concat(message)).getBytes());
 //                    channel.write(outbuffer);
+
+                    try {
+                        TimeUnit.SECONDS.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
 			}
 		}

@@ -1,15 +1,34 @@
 package com.test.hello;
 
+import org.junit.Test;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by iQiwen on 2018/12/11.
  */
 public class HelloWorld {
-    public static void main(String args[]) {
+
+    @Test
+    public void test2() {
+
+        Stack<String> stack = new Stack<>();
+        stack.push("nihao");
+        stack.push("小明");
+        stack.push(null);
+        stack.push("小明");
+
+        System.out.println(stack.toString());
+
+
+    }
+
+    @Test
+    public void test() {
 //
         System.out.println("Hello,Test;Hello,idea;Hello,Maven");
         System.out.println(ClassLoader.getSystemClassLoader().toString());
@@ -18,6 +37,7 @@ public class HelloWorld {
         Integer one = 10;//100
         Integer two = 10;//100
         System.out.println(one == two);
+
 //
         Integer total = 0;
         paramCheck(total);
@@ -61,13 +81,11 @@ public class HelloWorld {
 
     private static int iii() {
         System.out.println("wwwwwwwwwwww");
-
         return 3;
     }
 
 
     /**
-     *
      * @param total
      */
     private static void paramCheck(Integer total) {

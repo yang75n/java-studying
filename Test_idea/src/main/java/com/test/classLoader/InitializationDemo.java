@@ -24,7 +24,11 @@ class Father extends Grandpa {
     }
 
 
+    //注意有final和没有final的区别
     public static int factor = 25;
+
+    //主意有final和没有final的区别
+    public static final String name = "字符串常量爸爸";
 
 
     public Father() {
@@ -62,11 +66,13 @@ public class InitializationDemo {
     }
 
     public static void main(String[] args) {
-        System.out.println("爸爸的岁数:" + new Son().factor); //入口
+        //System.out.println("爸爸的岁数:" + new Son().factor); //入口
 
         //   System.out.println("爸爸的岁数2:" + new Son().factor);
 
         System.out.println("爸爸的岁数3：" + Son.factor);
+
+        //   System.out.println(Son.name);
 
     }
 

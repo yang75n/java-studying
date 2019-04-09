@@ -1,8 +1,22 @@
 package com.test.concurrentUtil;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.concurrent.CountDownLatch;
 
 public class TestCountDownLatch {
+
+
+    @Test
+    public void test() {
+        float f = 3.122332423423423423423243423423f;
+
+        Assert.assertTrue(false);
+        System.out.println(Math.PI);
+    }
+
+
     public static void main(String[] args) {
 
         final CountDownLatch latch = new CountDownLatch(2);
@@ -19,7 +33,6 @@ public class TestCountDownLatch {
                 }
             }
 
-
         }.start();
 
         new Thread() {
@@ -33,7 +46,6 @@ public class TestCountDownLatch {
                     e.printStackTrace();
                 }
             }
-
 
         }.start();
 
