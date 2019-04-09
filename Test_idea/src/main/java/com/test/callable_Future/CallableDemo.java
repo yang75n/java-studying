@@ -8,12 +8,10 @@ public class CallableDemo {
 
         @Override
         public Long call() throws Exception {
-
             long sum = 0;
             for (int i = 0; i < 9000; i++) {
                 sum += i;
             }
-
             return sum;
         }
     }

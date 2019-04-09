@@ -34,6 +34,13 @@ class Father extends Grandpa {
     public Father() {
         System.out.println("我是爸爸~");
     }
+
+
+    //赋值静态变量的静态方法
+    public static String staticMethod() {
+        System.out.println("父亲执行了静态方法");
+        return "给静态字段赋值了";
+    }
 }
 
 class Son extends Father {
@@ -50,6 +57,8 @@ class Son extends Father {
     public Son() {
         System.out.println("我是儿子~");
     }
+
+
 }
 
 public class InitializationDemo {
