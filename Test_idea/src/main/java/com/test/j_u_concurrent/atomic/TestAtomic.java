@@ -1,8 +1,8 @@
-package com.test.j_u_concurrent;
+package com.test.j_u_concurrent.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TestCAS {
+public class TestAtomic {
 
     public volatile static int count = 0;// 需要加同步才能保证
     public static AtomicInteger atomicInteger = new AtomicInteger(0);// 底层通过CAS方式保证加了锁
@@ -16,7 +16,7 @@ public class TestCAS {
                     e.printStackTrace();
                 }
                 for (int j = 0; j < 100; j++) {
-                    synchronized (TestCAS.class) {// 一定要保证同一把锁
+                    synchronized (TestAtomic.class) {// 一定要保证同一把锁
                         count++;
                     }
                     atomicInteger.incrementAndGet();

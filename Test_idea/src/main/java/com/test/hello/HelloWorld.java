@@ -3,8 +3,10 @@ package com.test.hello;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.util.*;
-import java.util.concurrent.Executors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by iQiwen on 2018/12/11.
@@ -14,7 +16,7 @@ public class HelloWorld {
 
     @Test
     public void test3() {
-        Executors.newFixedThreadPool()
+
     }
 
 
