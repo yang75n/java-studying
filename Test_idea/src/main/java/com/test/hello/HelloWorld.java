@@ -3,15 +3,20 @@ package com.test.hello;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
+import java.util.concurrent.Executors;
 
 /**
  * Created by iQiwen on 2018/12/11.
  */
 public class HelloWorld {
+
+
+    @Test
+    public void test3() {
+        Executors.newFixedThreadPool()
+    }
+
 
     @Test
     public void test2() {
@@ -23,7 +28,6 @@ public class HelloWorld {
         stack.push("小明");
 
         System.out.println(stack.toString());
-
 
     }
 
@@ -49,6 +53,7 @@ public class HelloWorld {
         for (int i = 0; i < iii(); i++) {
             System.out.println("aa");
         }
+
 //
         Float totalMoney = 200000.0f;
         Float ownMoney = 170000.2f;

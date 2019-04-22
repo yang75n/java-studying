@@ -21,5 +21,7 @@ public class main {
             IOperation operation = operationIterator.next();
             System.out.println("SPI result=" + operation.operation(6, 3));
         }
+
+
     }
 }

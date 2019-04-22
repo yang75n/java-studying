@@ -12,10 +12,12 @@ public class Test {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("start wait...");
+                System.out.println("start wait1...");
 
                 try {
+                    //wait和notiry加synchronized是为了保证wait和notify的原子性
                     synchronized (lock2) {
+                        System.out.println("start wait2...");
                         lock2.wait();
                         System.out.println("wait over");
                     }
