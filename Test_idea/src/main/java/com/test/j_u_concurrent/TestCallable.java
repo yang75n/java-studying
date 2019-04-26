@@ -1,8 +1,9 @@
 package com.test.j_u_concurrent;
 
+
 import java.util.concurrent.*;
 
-public class CallableDemo {
+public class TestCallable {
 
     static class SumTask implements Callable<Long> {
 

@@ -1,4 +1,4 @@
-package com.test.threadLock;
+package com.test.waitNotify;
 
 public class MyThreadPrinter2 implements Runnable {
 
