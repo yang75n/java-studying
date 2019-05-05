@@ -1,4 +1,4 @@
-package com.test.hello.operation;
+package com.test.operation;
 
 public class Main {
     public static void main(String[] args) {
