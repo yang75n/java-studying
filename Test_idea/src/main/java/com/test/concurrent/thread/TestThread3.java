@@ -1,4 +1,4 @@
-package com.test.thread;
+package com.test.concurrent.thread;
 
 public class TestThread3 {
     public static void main(String[] args) throws Exception {

@@ -1,4 +1,4 @@
-package com.test.j_u_concurrent.locks;
+package com.test.concurrent.j_u_concurrent.locks;
 
 import java.util.PriorityQueue;
 import java.util.concurrent.locks.Condition;

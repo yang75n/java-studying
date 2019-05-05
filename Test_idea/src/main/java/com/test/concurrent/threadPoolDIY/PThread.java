@@ -1,4 +1,4 @@
-package com.test.threadPoolDIY;
+package com.test.concurrent.threadPoolDIY;
 
 public class PThread extends Thread {
     //线程池

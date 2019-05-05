@@ -43,5 +43,6 @@ public class TestClosure {
         System.out.println(testClosure2().get());
         System.out.println(testClosure3().get());
 
+
     }
 }

@@ -14,7 +14,6 @@ public class Provider {
 			Naming.rebind("rmi://127.0.0.1:6600/PersonService", personService);
 			System.out.println("Service Start!");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

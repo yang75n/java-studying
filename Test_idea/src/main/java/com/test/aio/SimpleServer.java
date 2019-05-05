@@ -11,6 +11,7 @@ import java.util.concurrent.ExecutionException;
 public class SimpleServer {
 
     public SimpleServer(int port) throws IOException {
+
         final AsynchronousServerSocketChannel listener = AsynchronousServerSocketChannel.open()
                 .bind(new InetSocketAddress(port));
 
@@ -30,6 +31,7 @@ public class SimpleServer {
     }
 
     private void handle(AsynchronousSocketChannel ch) {
+
         ByteBuffer byteBuffer = ByteBuffer.allocate(32);
         try {
             ch.read(byteBuffer).get();
@@ -40,10 +42,10 @@ public class SimpleServer {
         }
         byteBuffer.flip();
         System.out.println("server received:" + byteBuffer.get());
-        // Do something
     }
 
     public static void main(String[] args) {
+
         try {
             SimpleServer server = new SimpleServer(7788);
         } catch (IOException e1) {

@@ -1,4 +1,4 @@
-package com.test.waitNotify;
+package com.test.concurrent.waitNotify;
 
 import java.util.PriorityQueue;
 

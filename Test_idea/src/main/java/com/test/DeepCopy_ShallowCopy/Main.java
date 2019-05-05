@@ -3,7 +3,7 @@ package com.test.deepCopy_shallowCopy;
 /**
  * Created by iQiwen on 2019/4/26.
  */
-public class Main   {
+public class Main {
 
     public static void main(String[] args) {
         int apples = 5;

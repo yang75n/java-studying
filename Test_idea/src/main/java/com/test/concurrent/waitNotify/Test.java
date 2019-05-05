@@ -1,4 +1,4 @@
-package com.test.waitNotify;
+package com.test.concurrent.waitNotify;
 
 /**
  * Created by iQiwen on 2018/12/20.

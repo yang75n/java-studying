@@ -19,9 +19,10 @@ public class HelloWorld {
     @Test
     public void test3() {
 
-        Logger.getLogger("nihao").log(Level.INFO,"woshi log");
-        Logger.getLogger("nihao").log(Level.SEVERE,"woshi log2");
-        Logger.getLogger("nihao").log(Level.ALL,"woshi log3");
+        Logger.getLogger("nihao").log(Level.INFO, "woshi log");
+        Logger.getLogger("nihao").log(Level.SEVERE, "woshi log2");
+        Logger.getLogger("nihao").log(Level.ALL, "woshi log3");
+
 
     }
 

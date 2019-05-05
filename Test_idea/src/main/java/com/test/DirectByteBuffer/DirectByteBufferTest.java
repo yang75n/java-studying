@@ -12,8 +12,10 @@ public class DirectByteBufferTest {
 
         TimeUnit.SECONDS.sleep(10);
 
+
+
         //清除直接缓存
-        ((DirectBuffer) bb).cleaner().clean();
+                ((DirectBuffer) bb).cleaner().clean();
 
         TimeUnit.SECONDS.sleep(10);
 

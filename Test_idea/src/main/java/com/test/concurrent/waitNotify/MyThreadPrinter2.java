@@ -1,4 +1,4 @@
-package com.test.waitNotify;
+package com.test.concurrent.waitNotify;
 
 public class MyThreadPrinter2 implements Runnable {
 

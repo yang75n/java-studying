@@ -1,4 +1,4 @@
-package com.test.threadLocal;
+package com.test.concurrent.threadLocal;
 
 public class TestNum {
 	// ①通过匿名内部类覆盖ThreadLocal的initialValue()方法，指定初始值

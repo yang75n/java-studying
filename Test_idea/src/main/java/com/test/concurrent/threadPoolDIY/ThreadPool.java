@@ -1,4 +1,4 @@
-package com.test.threadPoolDIY;
+package com.test.concurrent.threadPoolDIY;
 
 import java.util.List;
 import java.util.Vector;

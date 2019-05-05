@@ -1,4 +1,4 @@
-package com.test.j_u_concurrent;
+package com.test.concurrent.j_u_concurrent;
 
 import org.junit.Assert;
 import org.junit.Test;

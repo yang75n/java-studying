@@ -1,4 +1,4 @@
-package com.test.threadPoolDIY;
+package com.test.concurrent.threadPoolDIY;
 
 /**
  * Created by iQiwen on 2018/12/12.

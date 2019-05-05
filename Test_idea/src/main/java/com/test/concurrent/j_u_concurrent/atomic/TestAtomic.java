@@ -1,4 +1,4 @@
-package com.test.j_u_concurrent.atomic;
+package com.test.concurrent.j_u_concurrent.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
