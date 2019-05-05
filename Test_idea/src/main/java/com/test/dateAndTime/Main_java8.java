@@ -1,4 +1,4 @@
-package com.test.dateAndTime.java8;
+package com.test.dateAndTime;
 
 import org.junit.Test;
 
@@ -15,7 +15,7 @@ import java.util.Locale;
 /**
  * Created by iQiwen on 2019/5/5.
  */
-public class Main {
+public class Main_java8 {
     @Test
     public void testLocalDate() {
         LocalDate localDate = LocalDate.now();
