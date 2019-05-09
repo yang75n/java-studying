@@ -2,13 +2,12 @@ package com.test.hello;
 
 import org.junit.Test;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Created by iQiwen on 2018/12/11.
@@ -17,11 +16,10 @@ public class HelloWorld {
 
 
     @Test
-    public void test3() {
-
-        Logger.getLogger("nihao").log(Level.INFO, "woshi log");
-        Logger.getLogger("nihao").log(Level.SEVERE, "woshi log2");
-        Logger.getLogger("nihao").log(Level.ALL, "woshi log3");
+    public void test3() throws IOException {
+//        Logger.getLogger("nihao").log(Level.INFO, "woshi log");
+//        Logger.getLogger("nihao").log(Level.SEVERE, "woshi log2");
+//        Logger.getLogger("nihao").log(Level.ALL, "woshi log3");
 
 
     }
@@ -100,7 +98,7 @@ public class HelloWorld {
 
 
     /**
-     * @param total
+     * @param total total
      */
     private static void paramCheck(Integer total) {
         if (total < 1) {

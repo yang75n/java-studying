@@ -19,7 +19,7 @@ public class TestCountDownLatch {
 
     public static void main(String[] args) {
 
-        final CountDownLatch latch = new CountDownLatch(2);
+        final CountDownLatch latch = new CountDownLatch(3);
 
         new Thread() {
             public void run() {

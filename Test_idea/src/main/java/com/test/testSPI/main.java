@@ -6,10 +6,10 @@ import java.util.ServiceLoader;
 public class main {
 
     public static void main(String[] args) {
-        IOperation plus = new PlusOperationImpl();
-        IOperation division = new DivisionOperationImpl();
-        System.out.println(plus.operation(5, 3));
-        System.out.println(division.operation(9, 3));
+//        IOperation plus = new PlusOperationImpl();
+//        IOperation division = new DivisionOperationImpl();
+//        System.out.println(plus.operation(5, 3));
+//        System.out.println(division.operation(9, 3));
 
         ServiceLoader<IOperation> operations = ServiceLoader.load(IOperation.class);
         Iterator<IOperation> operationIterator = operations.iterator();

@@ -12,7 +12,7 @@ import java.util.concurrent.*;
  * <p>
  * Created by iQiwen on 2019/5/5.
  */
-public class testForkJoinPool {
+public class TestForkJoinPool {
     @Test
     public void test() {
         ForkJoinPool forkJoinPool = new ForkJoinPool();//ForkJoinPool.commonPool();
