@@ -35,6 +35,7 @@ public class TestCountDownLatch {
                     System.out.println("子线程" + Thread.currentThread().getName() + "正在执行");
                     Thread.sleep(3000);
                     System.out.println("子线程" + Thread.currentThread().getName() + "执行完毕");
+                    //调用countDown时，state-1
                     latch.countDown();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -49,6 +50,7 @@ public class TestCountDownLatch {
                     System.out.println("子线程" + Thread.currentThread().getName() + "正在执行");
                     Thread.sleep(3000);
                     System.out.println("子线程" + Thread.currentThread().getName() + "执行完毕");
+                    //调用countDown时，state-1
                     latch.countDown();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -58,6 +60,7 @@ public class TestCountDownLatch {
 
         try {
             System.out.println("等待2个子线程执行完毕...");
+            //调用await时候阻塞，state=0的时候释放所有线程
             latch.await();
             System.out.println("2个子线程已经执行完毕");
             System.out.println("继续执行主线程");
@@ -78,6 +81,7 @@ public class TestCountDownLatch {
                 public void run() {
                     try {
                         System.out.println("子线程" + Thread.currentThread().getName() + "正在等待");
+                        //调用await时候阻塞，state=0的时候释放所有线程
                         latch.await();
                         System.out.println("子线程" + Thread.currentThread().getName() + "正在执行");
                         Thread.sleep(2000);
@@ -97,6 +101,7 @@ public class TestCountDownLatch {
         }
         //单曲有多少线程
         Thread.currentThread().getThreadGroup().list();
+        //调用countDown时，state-1
         latch.countDown();
         while (Thread.activeCount() > 2) {
             try {
@@ -104,9 +109,10 @@ public class TestCountDownLatch {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-           // Thread.yield();
+            // Thread.yield();
         }
         //单曲有多少线程
         Thread.currentThread()
-        .getThreadGroup().list(); }
+                .getThreadGroup().list();
+    }
 }
