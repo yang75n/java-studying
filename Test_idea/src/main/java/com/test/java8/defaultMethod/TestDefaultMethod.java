@@ -19,5 +19,16 @@ public class TestDefaultMethod implements Service {
         service.show();
         service.show1();
         service.show2();
+        Service.show3();
+        testService(() -> System.out.println("lambda表达式,只有一行代码"));
+        testService(() -> {
+            System.out.println("lambda表达式,有多行代码2");
+            System.out.println("lambda表达式,有多行代码2");
+        });
+
+    }
+
+    private static void testService(Service service) {
+        service.show1();
     }
 }
