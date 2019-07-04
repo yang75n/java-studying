@@ -9,7 +9,7 @@ public class Server {
 
 	public static void main(String[] args) {
 		// 接受组播和发送组播的数据报服务都要把组播地址添加进来
-		String host = "225.0.0.1";// 多播地址
+		String host = "224.0.0.1";// 多播地址
 		int port = 9998;
 		int length = 1024;
 		byte[] buf = new byte[length];
