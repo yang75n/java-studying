@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.SocketException;
 
 /**
  *
@@ -21,10 +20,10 @@ import java.net.SocketException;
  * 
  * 
  */
-class Send3 implements Runnable {
+class Send implements Runnable {
 
 	/*
-	 * 广播比较好理解，我这里的局域网网络地址是 192.168.168.0
+     * 广播比较好理解，我这里的局域网网络地址是 192.168.168.0
 	 * 
 	 * 所以 ip 为 192.168.168.1 - 192.168.168.254 是一个本局域网内的有效 ip 地址
 	 * 
@@ -32,7 +31,7 @@ class Send3 implements Runnable {
 	 */
 	private DatagramSocket socket;
 
-	public Send3(DatagramSocket socket) {
+	public Send(DatagramSocket socket) {
 		this.socket = socket;
 	}
 
@@ -58,43 +57,5 @@ class Send3 implements Runnable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-}
-
-class Rece3 implements Runnable {
-	private DatagramSocket socket;
-
-	public Rece3(DatagramSocket socket) {
-		this.socket = socket;
-	}
-
-	@Override
-	public void run() {
-		try {
-			while (true) {
-				byte[] buff = new byte[1024];
-				DatagramPacket packet = new DatagramPacket(buff, buff.length);
-				System.out.println("等待接收");
-				socket.receive(packet);
-				System.out.println("收到了数据");
-				String ip = packet.getAddress().getHostAddress();
-				String data = new String(packet.getData(), 0, packet.getLength());
-				if ("bye".equals(data)) {
-					System.out.println(ip + "离开了");
-				}
-				System.out.println(ip + "说" + data);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-}
-
-public class ChatDemo3 {
-	public static void main(String args[]) throws SocketException {
-		DatagramSocket sendSocket = new DatagramSocket();
-		DatagramSocket reveSocket = new DatagramSocket(10001);
-		new Thread(new Send3(sendSocket)).start();
-		new Thread(new Rece3(reveSocket)).start();
 	}
 }
