@@ -32,7 +32,7 @@ public class TestStreams {
                 .stream()
                 .sorted()
                 .filter((s) -> s.startsWith("a"))
-                .forEach(System.out::println);// aaa1 aaa2
+                .forEach(System.out::println);// aaa1 aaa21
 
         System.out.println(stringList);// ddd2, aaa2, bbb1, aaa1, bbb3, ccc, bbb2, ddd1
 

@@ -20,8 +20,6 @@ public class HelloWorld {
 //        Logger.getLogger("nihao").log(Level.INFO, "woshi log");
 //        Logger.getLogger("nihao").log(Level.SEVERE, "woshi log2");
 //        Logger.getLogger("nihao").log(Level.ALL, "woshi log3");
-
-
     }
 
 
@@ -83,6 +81,8 @@ public class HelloWorld {
         System.out.println(list1 + " ," + list1.hashCode());
 
         System.out.println(list == list1);
+
+
 
 
         String s1 = "sdf";
