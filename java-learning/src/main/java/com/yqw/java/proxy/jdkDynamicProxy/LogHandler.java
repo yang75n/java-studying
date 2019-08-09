@@ -1,4 +1,4 @@
-package com.yqw.java.proxy.dynamicProxy;
+package com.yqw.java.proxy.jdkDynamicProxy;
 //动态代理类只能代理接口（不支持抽象类），代理类都需要实现InvocationHandler类，实现invoke方法。该invoke方法就是调用被代理接口的所有方法时需要调用的，该invoke方法返回的值是被代理接口的一个实现类
 
 import java.lang.reflect.InvocationHandler;

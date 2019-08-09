@@ -1,4 +1,4 @@
-package com.yqw.java.proxy.dynamicProxy.demo2;
+package com.yqw.java.proxy.jdkDynamicProxy.demo2;
 
 public interface UserDao {
 

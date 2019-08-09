@@ -1,4 +1,4 @@
-package com.yqw.java.proxy.dynamicProxy;
+package com.yqw.java.proxy.jdkDynamicProxy;
 public class UserManagerImpl implements UserManager {
 
 	@Override
