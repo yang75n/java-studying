@@ -7,7 +7,7 @@ import java.util.Optional;
 /**
  * Created by iQiwen on 2019/5/10.
  */
-public class TestStreams {
+public class TestStream {
     public static void main(String[] args) {
         List<String> stringList = new ArrayList<>();
         stringList.add("ddd2");
@@ -18,6 +18,7 @@ public class TestStreams {
         stringList.add("ccc");
         stringList.add("bbb2");
         stringList.add("ddd1");
+
 
 
         // 测试 Filter(过滤)

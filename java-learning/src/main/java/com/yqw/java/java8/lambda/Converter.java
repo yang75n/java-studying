@@ -1,4 +1,4 @@
-package com.yqw.java.java8.Lambda;
+package com.yqw.java.java8.lambda;
 
 @FunctionalInterface
 public interface Converter<F, T> {

@@ -1,4 +1,4 @@
-package com.yqw.java.java8;
+package com.yqw.java.java8.lambda;
 
 public class TestLambda {
 
