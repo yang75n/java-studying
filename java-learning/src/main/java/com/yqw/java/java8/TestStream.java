@@ -1,8 +1,11 @@
 package com.yqw.java.java8;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * Created by iQiwen on 2019/5/10.
@@ -84,5 +87,7 @@ public class TestStream {
                         .reduce((s1, s2) -> s1 + "#" + s2);
 
         reduced.ifPresent(System.out::println);//aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2
+
+
     }
 }
