@@ -54,7 +54,7 @@ public class HelloWorld {
         System.out.println(b);
     }
 
-    public void used4t5(int a, int b) {
+    private void used4t5(int a, int b) {
         a = b;
         b = a;
     }
