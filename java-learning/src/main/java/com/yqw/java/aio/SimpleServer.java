@@ -27,7 +27,6 @@ public class SimpleServer {
                 System.out.println("exc=" + exc + "" + att);
             }
         });
-
     }
 
     private void handle(AsynchronousSocketChannel ch) {

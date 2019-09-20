@@ -11,7 +11,6 @@ public class TestThread3 {
                         System.out.println(Thread.currentThread().getName() + "=" + i);
                     }
                 }
-
             }
         }, "线程1");
         t1.start();

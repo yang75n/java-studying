@@ -4,16 +4,22 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * Created by iQiwen on 2018/12/11.
  */
 public class HelloWorld {
+
+    @Test
+    public void t8() {
+        while(true){
+            int random = new Random().nextInt(7);
+            System.out.println(random);
+        }
+      // System.out.println("Hello World.");
+    }
 
     @Test
     public void t7() {

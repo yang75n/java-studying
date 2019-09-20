@@ -2,6 +2,7 @@ package com.yqw.java.dateAndTime;
 
 import org.junit.Test;
 
+import javax.security.sasl.SaslServer;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,11 +15,13 @@ import java.util.concurrent.TimeUnit;
  * Created by iQiwen on 2019/5/5.
  */
 public class Main {
+
     @Test
     public void testcurrentTimeMillis() {
         long time = System.currentTimeMillis();
         System.out.printf("currentTime=%s\n", time);
-
+        long nanotime = System.nanoTime();
+        System.out.println(nanotime);
     }
 
     @Test
@@ -48,7 +51,6 @@ public class Main {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateStr = dateFormat.format(date);
         System.out.printf("格式化后日期:%s\n", dateStr);
-
     }
 
     /**
@@ -57,13 +59,14 @@ public class Main {
      */
     @Test
     public void testCalendar() {
+        System.out.print("testCalendar ...");
+
         Calendar now = Calendar.getInstance(); //默认为当前时间
         System.out.println(now.getTime());
         now.setTimeZone(TimeZone.getTimeZone("GMT+8:00")); //设置时区 北京时间
         //now.set(2016, 10, 30, 15, 55, 44); //陷阱:Calendar的月份是0~11
         Calendar now2 = new GregorianCalendar(); //默认为当前时间
         Calendar now3 = new GregorianCalendar(2016, 10, 30, 15, 55, 44); //陷阱:Calendar的月份是0~11
-
 
         System.out.println("年: " + now.get(Calendar.YEAR)); //返回int类型
         System.out.println("月: " + (now.get(Calendar.MONTH) + 1)); //返回int类型，注意：月份从零开始

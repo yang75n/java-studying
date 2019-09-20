@@ -1,6 +1,5 @@
 package com.yqw.java.directByteBuffer;
 
-import sun.nio.ch.DirectBuffer;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
@@ -16,7 +15,7 @@ public class DirectByteBufferTest {
 
 
         //清除直接缓存
-        ((DirectBuffer) bb).cleaner().clean();
+       // ((DirectBuffer) bb).cleaner().clean();
 
         //
         TimeUnit.SECONDS.sleep(10);

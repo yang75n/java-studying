@@ -7,7 +7,6 @@ public class Book {
         staticFunction();
     }
 
-
     //注意词出静态变量和位置
     static Book book = new Book();
 
