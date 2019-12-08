@@ -1,4 +1,4 @@
-package com.yqw.java.classLoader.class_ForName;
+package com.yqw.java.classLoaderSequence.class_ForName;
 
 public class ClassForName {
     //静态代码块.

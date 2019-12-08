@@ -1,4 +1,4 @@
-package com.yqw.java.classLoader;
+package com.yqw.java.classLoaderSequence;
 
 public class Book {
 

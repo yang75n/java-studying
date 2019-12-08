@@ -1,4 +1,4 @@
-package com.yqw.java.classLoader;
+package com.yqw.java.classLoaderSequence;
 
 /**
  * 这是网易2015校招Java面试题,直接上题目。

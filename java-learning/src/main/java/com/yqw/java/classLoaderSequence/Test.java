@@ -1,4 +1,4 @@
-package com.yqw.java.classLoader;
+package com.yqw.java.classLoaderSequence;
 
 /**
  * yqw static
