@@ -6,6 +6,12 @@ public class MyClassLoader extends ClassLoader {
     public Class<?> loadClass(String name) throws ClassNotFoundException {
         return super.loadClass(name);
     }
+
+    //自定义类加载实现
+    public Class<?> loadFile(String name) throws ClassNotFoundException {
+        //return defineClass()
+        return null;
+    }
 }
 
 
