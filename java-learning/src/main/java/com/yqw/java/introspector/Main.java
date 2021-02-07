@@ -21,5 +21,12 @@ public class Main {
             System.out.println(pd.getReadMethod().invoke(new IntrospectorBean()));
             System.out.println("----------------结束---------------");
         }
+
+
+        //直接使用PropertyDescriptor构造某个属性
+        PropertyDescriptor pd = new PropertyDescriptor("name", IntrospectorBean.class);
+        System.out.println("属性名：" + pd.getName());
+        System.out.println("Getter：" + pd.getReadMethod());
+        System.out.println(pd.getReadMethod().invoke(new IntrospectorBean()));
     }
 }
